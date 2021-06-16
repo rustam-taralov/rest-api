@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202106160610
+      author: rustam
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: consumer_key
+                  name: id
+                  type: bigint
+              - column:
+                  name: product_name
+                  type: varchar(255)
+              - column:
+                  name: price
+                  type: double
+            tableName: product

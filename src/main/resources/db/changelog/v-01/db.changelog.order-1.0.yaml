@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202106161903
+      author: rustam
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: consumer_key
+                  name: id
+                  type: bigint
+              - column:
+                  name: created_date
+                  type: datetime
+              - column:
+                  name: order_finish_date
+                  type: datetime
+              - column:
+                  name: order_status
+                  type: varchar(255)
+              - column:
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_customer_id
+                    references: consumer(id)
+                  name: consumer_id
+                  type: bigint
+              - column:
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_product_id
+                    references: product(id)
+                  name: product_id
+                  type: bigint
+            tableName: order

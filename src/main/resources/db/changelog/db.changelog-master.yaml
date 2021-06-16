@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/v-01/db.changelog.consumer-1.0.yaml
+  - include:
+      file: db/changelog/v-01/db.changelog.product-1.0.yaml
+  - include:
+      file: db/changelog/v-01/db.changelog.order-1.0.yaml
